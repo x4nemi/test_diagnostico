@@ -8,11 +8,10 @@ void capturarEnteros(){
     for(size_t i = 0; i < 5; i++){
         scanf("%d", &enteros[i]);
         fflush(stdin);
+        suma += enteros[i];
     }
 
     for(size_t i = 0; i < 5; i++) printf("%d\n", enteros[i]);
-
-    for(size_t i = 0; i < 5; i++) suma += enteros[i];
 
     printf("Suma: %d\n", suma);
     printf("Promedio: %f\n", suma / 5.0);
@@ -22,9 +21,10 @@ void mostrar(int n, char cadena[]){
     for(size_t i = 0; i < n; i++) printf("%s\n", cadena);
 }
 
+
 int main(){
-    char op;
-    char cadena[20];
+    int op;
+    char cadena[] = "Hola mundo";
     int n;
 
     do{
@@ -34,30 +34,27 @@ int main(){
         printf("4) Mostrar personajes\n");
         printf("0) Salir\n");
         printf("Opcion: ");
-        fflush(stdin);
-        scanf("%c", &op);
-        fflush(stdin);
+        scanf("%d", &op);
         
 
         switch (op){
-        case '1':
+        case 1:
             capturarEnteros();
             break;
 
-        case '2':
-            printf("Escribe una cadena de hasta 20 caracteres: ");
-            fflush(stdin);
-            fgets(cadena, sizeof(cadena), stdin);
-            printf("n: ");
+        case 2:
+            printf("Se repetira n veces la cadena \"%s\"", cadena);
+            printf("\nn: ");
             scanf("%d", &n);
             mostrar(n, cadena);
+            
             break;
         
-        case '3':
+        case 3:
             capturarPersonajes();
             break;
         
-        case '4':
+        case 4:
             mostrarPersonajes();
             break;
 
