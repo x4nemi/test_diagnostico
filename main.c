@@ -38,6 +38,9 @@ int main(){
         
 
         switch (op){
+        case 0:
+            printf("Hasta luego\n");
+            break;
         case 1:
             capturarEnteros();
             break;
@@ -62,7 +65,7 @@ int main(){
             printf("Opcion incorrecta\n");
             break;
         }
-    }while(op != '0');
+    }while(op != 0);
 
 
 
